@@ -4,7 +4,7 @@ const cryptoSchema = new mongoose.Schema({
 	name: String,
 	price: Number,
 	marketCap: Number,
-	_24hchange: Number,
+	_24hChange: Number,
 	values: [
 		{
 			value: Number,
