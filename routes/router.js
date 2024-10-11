@@ -8,7 +8,7 @@ router.route("/stats").get(fetchKoinStats);
 router.route("/deviation").get(asyncHanlder(calculateDeviation));
 router.all("*", () => {
     throw new Error(
-			"Please check the URL or visit https://github.com/Venkat2552004/KoinX-KoinMonitor/blob/main/README.md"
+			"Please check the URL or visit https://github.com/Venkat2552004/KoinX-KoinMonitor/blob/main/README.md to understand more"
 		);
 });
 

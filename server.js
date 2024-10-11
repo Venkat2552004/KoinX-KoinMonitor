@@ -13,6 +13,11 @@ startFetchJob();
 
 app.use(express.json());
 app.use("/api", router);
+router.all("*", () => {
+	throw new Error(
+		"Please check the URL or visit https://github.com/Venkat2552004/KoinX-KoinMonitor/blob/main/README.md to understand more"
+	);
+});
 
 app.use((err, req, res, next) => {
 	res.status(500).send({ message: err.message });
