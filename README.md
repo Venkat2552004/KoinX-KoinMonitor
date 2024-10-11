@@ -8,7 +8,6 @@ KoinMonitor API provides endpoints to fetch cryptocurrency statistics and calcul
 - [API Endpoints](#api-endpoints)
   - [Get Cryptocurrency Statistics](#get-cryptocurrency-statistics)
   - [Calculate Standard Deviation](#calculate-standard-deviation)
-- [Error Handling](#error-handling)
 
 ## Introduction
 
@@ -25,12 +24,18 @@ The KoinMonitor API is deployed on Render and can be accessed at [koinmonitor.on
 - **Response**:
   - `200 OK`: Returns the statistics of the specified cryptocurrency.
   - `500 Internal Server Error`: Returns an error message if the coin is not found or any other error occurs.
-
   **Example Request**:
-```sh
-curl -X GET "https://koinmonitor.onrender.com/api/stats?coin=bitcoin"
-```
-
+  ```sh
+  curl -X GET "https://koinmonitor.onrender.com/api/stats?coin=bitcoin"
+  ```
+  **Example Response**:
+  ```sh
+  {
+    "price": 60960,
+    "marketCap": 1205967430000.11,
+    "24hChange": -0.127393623664478
+  }
+  ```
 
 ### Calculate Standard Deviation
 
@@ -41,8 +46,13 @@ curl -X GET "https://koinmonitor.onrender.com/api/stats?coin=bitcoin"
 - **Response**:
   - `200 OK`: Returns the standard deviation of the specified cryptocurrency based on the last 100 values.
   - `500 Internal Server Error`: Returns an error message if the coin is not found or any other error occurs.
-
   **Example Request**:
-```sh
-curl -X GET "https://koinmonitor.onrender.com/api/deviation?coin=bitcoin"
-```
+  ```sh
+  curl -X GET "https://koinmonitor.onrender.com/api/deviation?coin=bitcoin"
+  ```
+  **Example Response**:
+  ```sh
+  {
+    "deviation": 133.4074793838611
+  }
+  ```
