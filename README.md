@@ -42,7 +42,7 @@ curl -X GET "https://koinmonitor.onrender.com/api/stats?coin=bitcoin"
   - `200 OK`: Returns the standard deviation of the specified cryptocurrency based on the last 100 values.
   - `500 Internal Server Error`: Returns an error message if the coin is not found or any other error occurs.
 
-**Example Request**:
+  **Example Request**:
 ```sh
 curl -X GET "https://koinmonitor.onrender.com/api/deviation?coin=bitcoin"
 ```
