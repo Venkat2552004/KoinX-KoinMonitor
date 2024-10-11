@@ -5,7 +5,7 @@ const cryptoSchema = new mongoose.Schema({
 	price: Number,
 	marketCap: Number,
 	_24hChange: Number,
-	values: [
+	previousPrices: [
 		{
 			value: Number,
 			timestamp: { type: Date, default: Date.now },
