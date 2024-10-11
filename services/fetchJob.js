@@ -16,7 +16,7 @@ const startFetchJob = asyncHandler(async () => {
 							$set: {
 								price: val.usd,
 								marketCap: val.usd_market_cap,
-								_24Change: val.usd_24hr_change,
+								_24hChange: val.usd_24h_change,
 							},
 							$push: {
 								previousPrices: { value: val.usd, timestamp: new Date() },
