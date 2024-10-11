@@ -11,12 +11,18 @@ const fetchKoinStats = async(req, res) => {
 		throw new Error("Invalid Coin, only bitcoin, matic-network and ethereum are allowed");
 	}
 
-    const stats =await Crypto.findOne({name : coin});
+    try {
+        const stats =await Crypto.findOne({name : coin});
+    }
+    catch(err){
+        throw new Error(`Error occured while fetching stats about ${coin}`)
+    }
+    
     res.json({
 			price: stats.price,
 			marketCap: stats.marketCap,
 			"24hChange": stats._24hChange,
-		});
+	});
 }
 
 module.exports = fetchKoinStats;

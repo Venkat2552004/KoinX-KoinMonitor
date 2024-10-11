@@ -5,7 +5,7 @@ const calculateDeviation = async (req, res) => {
 	const coin = req.query.coin;
 
 	if (!coin) {
-		throw new Error("Coin not found in the request");
+		throw new Error("Coin not found in the request. Check the url");
 	}
 
 	if (!["bitcoin", "matic-network", "ethereum"].includes(coin.toLowerCase())) {
@@ -34,8 +34,6 @@ const calculateDeviation = async (req, res) => {
 		if (result.length === 0) {
 			throw new Error("No data found for the specified coin");
 		}
-
-		console.log(result);
 
 		res.json({
 			deviation: result[0].stdDev,
